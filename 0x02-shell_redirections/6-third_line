@@ -1,0 +1,2 @@
+#!/bin/bash
+cat iecta | head -3 | tail +3
