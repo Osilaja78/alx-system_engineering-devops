@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# This script displays the content of the file /etc/passwd.
+if [ ! -e /etc/passwd ]
+then
+	echo "file /etc/passwd does not exit"
+	exit 1
+fi
+
+while IFS=: read -r username _ userid _ _ homedir _
+do
+	echo "$username:$userid:$homedir"
+done < /etc/passwd
