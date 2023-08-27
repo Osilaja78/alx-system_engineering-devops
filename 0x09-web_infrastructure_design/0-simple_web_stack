@@ -1,0 +1,26 @@
+https://drive.google.com/file/d/16Om4DtfKLz3EMej5pF-mLlN2E7sRmYS6/view?usp=sharing
+
+A server.
+It is the physical or virtual machine that hosts the entire infrastructure.
+
+The purpose of the domain name is for identification of the host/hostname.
+
+The www record is a subdomain of foobar.com and points to the server's IP address (8.8.8.8).
+
+The roles o f the seb server includes:
+Listening for incoming HTTP requests from users.
+Receiving the request for www.foobar.com,
+Serving static files like HTML, CSS, images directly to the user's browser.
+Forwarding dynamic requests to the application server.
+
+The roles of the web server includes:
+    Processes dynamic requests, executes application logic, and generates dynamic content.
+    Communicates with the database to retrieve or store data.
+    Sends back dynamic responses to the web server.
+
+The role fo the database is to store structured data like user accounts, products, etc.
+
+The user's computer sends an HTTP request to the server (8.8.8.8) over the internet using the server's IP address.
+
+Issues wit hthe infrastructure.
+The issues with this infrastructure includes single point of failure, downtime during maintenance, and inability to handle high traffic. To address these issues, implementing load balancing, redundancy, and horizontal scaling would be necessary.
