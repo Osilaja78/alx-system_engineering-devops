@@ -1,0 +1,28 @@
+https://drive.google.com/file/d/1kHFoDua0GKMIieLofY1nz55i9rLxqO6u/view?usp=sharing
+
+Additional Elements:
+1. SSL: for secure transfer of information.
+2. Firewall: monitors incoming and outgoing network traffic and decides whether to allow or block specific traffic.
+3. Monitoring Client:  to identify and address performance issues or failures.
+
+What are firewalls for?
+A firewall is a network security device that monitors incoming and outgoing network traffic and permits or blocks data packets based on a set of security rules.
+
+Why is the traffic served over HTTPS?
+HTTPS uses encryption to protect information as it is being sent between clients and servers.
+
+What monitoring is used for?
+Monitoring involves observing and analyzing the performance, health, and behavior of a system or network. It helps identify issues, anomalies, and potential bottlenecks in real-time. Monitoring tools provide insights into the usage patterns, resource utilization, response times, and other metrics.
+
+How the monitoring tool is collecting data?
+They collect data from various sources, such as server logs, performance counters, network traffic, and application metrics. The collected data is processed, analyzed, and presented in dashboards or reports.
+
+What to do if you want to monitor your web server QPS?
+
+- Select a Monitoring Tool: Choose a monitoring tool that supports tracking QPS metrics.
+- Instrumentation: Integrate the monitoring tool with your web server by adding instrumentation code or using pre-built integrations.
+- Configure QPS Monitoring: Set up QPS monitoring using the monitoring tool's features.
+- Data Collection: The monitoring tool will collect data about incoming requests and queries. It will track the number of queries made to your web server per second.
+- Visualization: Use the monitoring tool's dashboards to visualize the QPS metrics over time. You can see trends, spikes, and variations in the number of queries your server is handling.
+- Alerts: Set up alerts to notify you when QPS exceeds a certain threshold, helping you proactively address potential performance issues.
+- Analysis: Analyze the data to identify peak usage times, patterns, and potential problems. This information can guide optimizations and scaling decisions.
