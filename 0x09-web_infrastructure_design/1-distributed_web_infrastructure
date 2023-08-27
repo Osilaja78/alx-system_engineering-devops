@@ -1,0 +1,27 @@
+https://drive.google.com/file/d/1jk_mkCu7czd-awVHqPRScz9RFXTq3HvK/view?usp=sharing
+
+Additional Elements and Their Purposes:
+1. Load Balancer: Distributes incoming requests across multiple application servers to balance the load.
+
+Load Balancer Configuration:
+
+- Configured with Round Robin distribution algorithm.
+- Routes requests in a circular manner to each application server.
+- Ensures even distribution of traffic.
+
+My load balancer enables an Active-Active setup.
+
+Active-Active vs Active-Passive:
+
+- Active-Active: Both servers handle incoming requests, sharing the load.
+- Active-Passive: One server handles traffic while the other remains idle, becoming active only if the first one fails.
+
+How a database Primary-Replica (Master-Slave) cluster works:
+- Primary (Master) Database: Handles write requests and replicates data to the Replica.
+- Replica (Slave) Database: Handles read requests and replicates data from the Primary.
+
+Issues with the Infrastructure:
+- Load balancer and each server could become a SPOF.
+- No firewall, potential security vulnerability.
+- No HTTPS in the setup, insecure information transfer.
+- No monitoring tools, difficult to identify and address performance issues or failures.
