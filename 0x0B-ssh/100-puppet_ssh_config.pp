@@ -1,18 +1,11 @@
-# Define SSH client configuration file path
-$ssh_config_file = '/etc/ssh/ssh_config'
-
-# Disable password authentication and configure identity file
+# set up your client SSH configuration file so that you can connect to a server without typing a password.
 file_line { 'Turn off passwd auth':
-  path   => $ssh_config_file,
-  line   => 'PasswordAuthentication no',
-  match  => '^PasswordAuthentication',
-  ensure => present,
-}
-
+  ensure => 'present',
+  path   => '/etc/ssh/ssh_config',
+  line   => '    PasswordAuthentication no',
+  }
 file_line { 'Declare identity file':
-  path   => $ssh_config_file,
-  line   => 'IdentityFile ~/.ssh/school',
-  match  => '^#?\s*IdentityFile',
-  ensure => present,
-}
-
+  ensure => 'present',
+  path   => '/etc/ssh/ssh_config',
+  line   => '    IdentityFile ~/.ssh/holberton',
+  }
