@@ -2,7 +2,7 @@
 
 # This script transfers file to a host server using scp
 
-if [ "$#" -lt 4 ]; then
+if [ "$#" -lt 3 ]; then
 	echo "Usage: 0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
 	exit 1
 fi
@@ -10,6 +10,9 @@ fi
 FILE_PATH="$1"
 IP="$2"
 USERNAME="$3"
-SSH_KEY_PATH="$4"
 
-scp -o StrictHostKeyChecking=no -i "$SSH_KEY_PATH" "$FILE_PATH" "$USERNAME@$IP:~/"
+if [ "$4" ]; then
+	scp -o StrictHostKeyChecking=no -i "$FILE_PATH" "$USERNAME@$IP:~/"
+elif [ "$3" ]; then
+	scp -i "$4" -o StrictHostKeyChecking=no "$FILE_PATH" "$USERNAME@$IP:~/"
+fi
