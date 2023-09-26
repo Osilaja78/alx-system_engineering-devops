@@ -1,16 +1,16 @@
 # This script configures an nginx server.
 
 package { 'nginx':
-	ensure => installed
+    ensure => installed
 }
 
 file {'/usr/share/nginx/html/404.html':
-	content => 'Ceci n\'est pas une page',
-	mode => 0644
+    content => 'Ceci n\'est pas une page',
+    mode    => '0644'
 }
 
 file { '/etc/nginx/sites-available/default':
-	content => "server {
+    content => "server {
     	listen 80 default_server;
 
     	root /usr/share/nginx/html;
@@ -31,10 +31,10 @@ file { '/etc/nginx/sites-available/default':
     	}
 	}
 	",
-	notify => Service['Nginx']
+    notify  => Service['Nginx']
 }
 
 service {'nginx':
-	ensure => running,
-	enable => true
+    ensure => running,
+    enable => true
 }
