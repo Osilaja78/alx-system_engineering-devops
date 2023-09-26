@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # This script transfers file to a host server using scp
 
 if [ "$4" ]; then
