@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 # This script restarts an apache server.
 
+service apache2 start
+echo "Hello Holberton" > /var/www/html/index.html
 service apache2 restart
