@@ -1,1 +1,3 @@
-service apache2 start
+# This script restarts an apache server.
+
+service apache2 restart
