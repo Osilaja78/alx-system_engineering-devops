@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# This script configures nginx server and adds a custom header.
+
+apt-get update
+apt-get install -y nginx
+ufw allow "Nginx Full"
+echo 'Hello World!' | sudo tee /var/www/html/index.nginx-debian.html > /dev/null
+sudo sed -i '/listen 80 default_server/a add_header X-Served-By $hostname;' /etc/nginx/sites-available/default
+sudo sed -i '/listen 80 default_server/a location /redirect_me {\n    return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n}' /etc/nginx/sites-available/default
+service nginx restart
