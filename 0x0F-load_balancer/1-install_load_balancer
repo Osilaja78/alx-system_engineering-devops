@@ -2,9 +2,10 @@
 # This script configures HAProxy for a server.
 
 apt-get update
-apt-get install --no-install-recommends software-properties-common
-add-apt-repository ppa:vbernat/haproxy-2.6
-apt-get install haproxy=2.6.\*
+apt-get -y install haproxy
+# apt-get install --no-install-recommends software-properties-common
+# add-apt-repository ppa:vbernat/haproxy-2.6
+# apt-get install haproxy=2.6.\*
 cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg.bak
 cat <<EOL | sudo tee -a /etc/haproxy/haproxy.cfg
 frontend http-in
