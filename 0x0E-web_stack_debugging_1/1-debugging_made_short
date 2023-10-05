@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script is a short version of the first one.
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+kill "$(pgrep 'nginx' | head -1)"
