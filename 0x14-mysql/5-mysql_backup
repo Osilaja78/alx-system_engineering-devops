@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# This scrit creates and copmress a mysql db bakcup.
+
+if [ "$1" ]; then
+	current_date=$(date +'%d-%m-%Y')
+
+	mysqldump -u root -p"$1" --all-databases > backup.sql
+	tar -czvf "$current_date.tar.gz" backup.sql
+else
+	echo "Usage: $0 <MySQL_Root_Password>"
+	exit 1
+fi
