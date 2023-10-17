@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This script runs whomai on any user passed as an arg.
+
+if [ "$1" ]; then
+	sudo -u "$1" whoami
+else
+	echo "Usage: $0 <user>"
+	exit 1
+fi
