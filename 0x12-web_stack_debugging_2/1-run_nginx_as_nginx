@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This script runs nginx with user nginx.
+
+chmod ugo+wrx /etc/apache2/ports.conf /etc/nginx/nginx.conf
+cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bak
+rm /etc/nginx/sites-enabled/default
+sed -i 's/# user www-data;/user nginx;/g' /etc/nginx/nginx.conf
+sed -i '/http {/a \nserver {\n\tlisten 8080;\n\tserver_name _;\n\tlocation / {\n\t\troot /var/www/html;\n\t\tindex index.html;\n\t}\n}' /etc/nginx/nginx.conf
+service nginx restart
