@@ -2,9 +2,9 @@
 """This script gathers data from an API"""
 
 
-import sys
-import requests
 import json
+import requests
+import sys
 
 
 if __name__ == '__main__':
