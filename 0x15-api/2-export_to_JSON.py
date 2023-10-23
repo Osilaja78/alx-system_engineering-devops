@@ -24,14 +24,16 @@ if __name__ == '__main__':
     todo_data = todo_res.text
     loaded_todo_data = json.loads(todo_data)
 
-    content = ""
+    content_dict = {user_id: []}
     for data in loaded_todo_data:
-        content += '"{}","{}","{}","{}"\n'.format(
-            user_id,
-            name,
-            data['completed'],
-            data['title']
-        )
+        content = {
+            "task": data['title'],
+            "completed": data['completed'],
+            "username": name
+        }
+        content_dict[user_id].append(content)
 
-    with open(f'{user_id}.csv', 'w', encoding='UTF8') as f:
-        f.write(content)
+    dumped_content = json.dumps(content_dict)
+
+    with open(f'{user_id}.json', 'w', encoding='UTF8') as f:
+        f.write(dumped_content)
