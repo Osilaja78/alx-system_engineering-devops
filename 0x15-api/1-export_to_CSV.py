@@ -29,7 +29,7 @@ if __name__ == '__main__':
 
     content = ""
     for data in loaded_todo_data:
-        content += '"{}","{}","{}","{}"\n'.format(
+        content += '"{}","{}","{}","{}" \n'.format(
             user_id,
             name,
             data['completed'],
