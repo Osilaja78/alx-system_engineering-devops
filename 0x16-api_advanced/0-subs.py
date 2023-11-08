@@ -1,9 +1,15 @@
 #!/usr/bin/python3
-"""Get number of subreddit subscribers"""
+"""Subreddit subscribers"""
+
+
 import requests
 
 
 def number_of_subscribers(subreddit):
+    """
+    Queries the reddit API and gets number
+    of subreddit subscribers
+    """
 
     url = f"https://www.reddit.com/r/{subreddit}/about.json"
 
