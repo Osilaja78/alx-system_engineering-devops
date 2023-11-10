@@ -2,9 +2,9 @@
 """Module for advanced task"""
 
 
+from collections import Counter
 import requests
 import re
-from collections import Counter
 
 
 def count_words(subreddit, word_list, results=None, after=None):
