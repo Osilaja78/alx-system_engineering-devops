@@ -1,0 +1,52 @@
+# Default server configuration
+#
+server {
+        listen 80 default_server;
+
+        location /hbnb_static {
+        alias /data/web_static/current/;
+        }
+
+        error_page 404 /404.html;
+        location = /404.html {
+                root /usr/share/nginx/html;
+                internal;
+        }
+
+        location /redirect_me {
+                return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+        }
+
+        location ^~ /.well-known/acme-challenge/ {
+                alias /var/www/yourdomain.com/.well-known/acme-challenge/;
+                try_files $uri =404;
+        }
+
+        add_header X-Served-By $hostname;
+
+        listen [::]:80 default_server;
+
+        # SSL configuration
+        #
+        # listen 443 ssl default_server;
+        # listen [::]:443 ssl default_server;
+        #
+        # Note: You should disable gzip for SSL traffic.
+	       root /var/www/html;
+
+        # Add index.php to the list if you are using PHP
+        index index.html index.htm index.nginx-debian.html;
+
+        server_name 34.207.57.13;
+
+        location /airbnb-onepage/ {
+                # First attempt to serve request as file, then
+                # as directory, then fall back to displaying a 404.
+                proxy_pass http://127.0.0.1:5000/airbnb-onepage/;
+                #try_files $uri $uri/ =404;
+        }
+
+	location ~ /airbnb-dynamic/number_odd_or_even/(\d+)$ {
+		proxy_pass http://127.0.0.1:5001/number_odd_or_even/$1;
+	}
+}
